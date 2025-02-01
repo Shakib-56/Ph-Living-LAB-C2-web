@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,17 @@
     font-optical-sizing: auto;
     font-weight:400;
     font-style: normal;
-}
+} 
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%;
+            transform: translateY(-30px) ;}
+  }
+  .animate-typing {
+    animation: typing infinite 4s steps(30, end)  forwards;
+
+  }
+
 
     </style>
     
@@ -33,37 +43,66 @@
             extend: {
               colors: {
                 clifford: '#da373d',
-              }
-            }
+                primary:'#179800',
+                secondary:'#efebe3',
+              },
+            },
           }
         }
       </script>
 
 </head>
 <body class="sora-fonts">
-    <header>
+        <header class="bg-gradient-to-b from-[#FFFFFF] to-[#EFEBE3] ">
         <!-- nav bar start -->
          <nav>
-            <div class=" container  navbar bg-base-100">
+            <div class="container flex justify-between items-center mx-auto py-4 lg:py-5 lg:px-20  navbar ">
                 <div class="navbar-start">
-                  <div class="dropdown">
-                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M4 6h16M4 12h8m-8 6h16" />
-                      </svg>
+                  
+                  <!--  logo -->
+                   <div class="w-28 lg:max-w-40"><img src="/c2-assets/logo-header.png" alt=""></div>
+
+                
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact us</a></li>
+                  </ul>
+                </div>
+                <div class=" navbar-end pr-5">
+                    <!-- large-device-nav-end-icons-part-start -->
+                  <div>
+                    <ul class=" hidden  lg:flex justify-around items-center menu menu-horizontal rounded-box mt-6">
+                        <li>
+                          <a class="tooltip" data-tip="Home">
+                            <i class="fa-solid fa-magnifying-glass"></i> </a>                       </li>
+                        <li>
+                          <a class="tooltip" data-tip="Cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                          </a>
+                        </li>
+                        <li>
+                            <div>
+                        <button class="px-4 py-2 border border-green-500 rounded-lg hover:bg-primary hover:text-white ">Login</button>
+                            </div>       
+                        </li>
+                        <li>
+                            <div>
+                        <button class="px-4 py-2  border-green-500 bg-primary rounded-lg hover:bg-transparent hover:border hover:border-green-500 text-white hover:text-black ">Login</button>
+                            </div>       
+                        </li>
+                      </ul>
+                  </div>
+                   <!-- dropdown end-mobile -->
+                  <div class="dropdown flex pr-2 lg:hidden">
+                    <div class="w-4 h-5 " tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <i class="fa-solid fa-bars text-[#179800]  text-3xl "></i>
                     </div>
                     <ul
                       tabindex="0"
-                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3  w-52 pr-4 shadow">
                       <li><a>Item 1</a></li>
                       <li>
                         <a>Parent</a>
@@ -75,31 +114,119 @@
                       <li><a>Item 3</a></li>
                     </ul>
                   </div>
-                  <a class="btn btn-ghost text-xl">daisyUI</a>
-                </div>
-                <div class="navbar-center hidden lg:flex">
-                  <ul class="menu menu-horizontal px-1">
-                    <li><a>Item 1</a></li>
-                    <li>
-                      <details>
-                        <summary>Parent</summary>
-                        <ul class="p-2">
-                          <li><a>Submenu 1</a></li>
-                          <li><a>Submenu 2</a></li>
-                        </ul>
-                      </details>
-                    </li>
-                    <li><a>Item 3</a></li>
-                  </ul>
-                </div>
-                <div class="navbar-end">
-                  <a class="btn">Button</a>
                 </div>
               </div>
+              <hr class="bg-[#179800] h-[2px] lg:hidden">
          </nav>
+         <!-- hero section -->
+         <section >
+            <div class="flex flex-col lg:flex lg:flex-col my-3 lg:mx-auto justify-center items-center">
+                <div class=" group flex flex-col px-5 py-5 lg:p-0 justify-center items-center">
+                    <h1 class="text-3xl  lg:text-4xl font-semibold lg:font-bold text-center  max-w-2/3 lg:w-4/5 animate-typing group-hover:scroll-animate"> <strong>Freshness <span class="text-primary">You Can <br> Count</span></strong>
+                         On,Prices <br class="lg:hidden">You’ll Love!</h1>
+                        <p class="w-4/5 lg:max-w-2xl text-center lg:my-8">Shop your daily essentials at unbeatable prices. From fresh produce to pantry staples, we’ve got you covered every day!</p>
+                </div>
+                <div class="lg:max-w-screen-md lg:mx-auto ">
+                    <img class=" lg:w-full " src="c2-assets/hero-vegetables.png" alt="">
+                </div>
+            </div>
+         </section>
 
     </header>
-    <main>
+    <main class=" container px-5 lg:px-20 lg:mx-auto">
+        
+    <!-- Card-section -->
+        <section class="container mx-auto bg-white">
+            <div  class="mx-auto my-20">
+                <h2 class="text-primary text-2xl my-4 p-4">Services</h2>
+                <div class=" grid grid-cols-1 mx-auto my-6 gap-4 p-4 mt-2 lg:grid-cols-3 ">
+                    <div class="card bg-secondary w-full  shadow-sm">
+                        <figure class="px-10 pt-10">
+                          <img
+                            src="c2-assets/service.png"
+                            alt="Services"
+                            class="rounded-full bg-white p-4" />
+                        </figure>
+                        <div class="card-body items-center p-4 text-center">
+                          <h2 class="card-title">24/7 Services </h2>
+                          <p class="text-gray-500">Nature's Platter offers 24/7 service, ensuring quality and convenience anytime you need.</p>
+                        </div>
+                      </div>
+                      <div class="card bg-secondary w-full  shadow-sm">
+                        <figure class="px-10 pt-10">
+                          <img
+                            src="c2-assets/delivery.png"
+                            alt="delivery"
+                            class="rounded-full bg-white p-4" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                          <h2 class="card-title">Fast Delivery</h2>
+                          <p class="text-gray-500">Nature's Platter ensures fast delivery, bringing fresh products to you quickly and hassle-free.</p>
+                        </div>
+                      </div>   
+                    <div class="card bg-secondary w-full  shadow-sm">
+                        <figure class="px-10 pt-10">
+                          <img
+                            src="c2-assets/healthy.png"
+                            alt="Shoes"
+                            class="rounded-full bg-white p-4" />
+                        </figure>
+                        <div class="card-body items-center text-center">
+                          <h2 class="card-title">Healthy Products</h2>
+                          <p class="text-gray-500">Nature's Platter delivers fresh, healthy, and natural products to support a nutritious lifestyle.</p>
+                        </div>
+                </div>
+                      
+                </div>
+            </div>
+            
+         </section>
+         <!-- Popular Product -->
+          <!-- arrival and offer -->
+           <section class="container mx-auto my-10 ">
+            <div class=" my-4 ml-4">
+            <h2 class="font-bold text-primary">Arrival & Offers</h2>
+
+            </div>
+            <div class="container  bg-white p-5  w-full max-h-full flex flex-col lg:flex lg:flex-row  gap-5">
+                <div class="bg-primary p-8 lg:p-8 rounded-xl lg:w-3/4 flex justify-center items-center">
+                    <!-- left content -->
+                     <div class="flex flex-col justify-center items-center gap-4 lg:flex lg:flex-col lg:justify-center lg:items-center lg:gap-6">
+                        <div class="lg:w-full">
+                            <img class=" max-w-40 max-h-40 lg:max-w-60 lg:max-h-60" src="c2-assets/dawat-logo.png" alt="">
+                        </div>
+                        <button class="btn btn-ghost text-white lg:hover:bg-white bg-green-500">Cook Exotic Dishes</button>
+                        <h2 class="text-white font-bold">UP to 20% OFF</h2>
+                     </div>
+                     <!-- right content -->
+                      <div>
+                       <div class="img-box lg:p-5">
+                        <img class="max-w-60 p-4 max-h-60 lg:max-w-60 lg:max-h-auto" src="c2-assets/dawat-mock-up.png" alt="">
+                       </div>
+                      </div>
+    
+                </div>
+                <div class="bg-[#102861] p-8 lg:p-8 rounded-xl  lg:w-2/5 flex justify-between p:6 lg:flex lg:justify-center items-center">
+                    <!-- left content -->
+                     <div class="flex flex-col justify-center items-center gap-4 lg:flex lg:flex-col lg:justify-center lg:items-center lg:pl-10 lg:gap-4">
+                        <div class="lg:w-full">
+                            <img class="lg:max-w-60 lg:max-h-60" src="c2-assets/india-gate-logo.png" alt="">
+                        </div>
+                        <button class="btn btn-ghost text-white lg:hover:bg-white bg-blue-700 lg:pl-4">Cook Exotic Dishes</button>
+                        <h2 class="text-white font-bold lg:p-4">UP to 40% OFF</h2>
+                     </div>
+                     <!-- right content -->
+                      <div>
+                       <div class="img-box lg:p-5">
+                        <img class="max-w-36 max-h-auto lg:max-w-60 lg:max-h-auto" src="c2-assets/india-gate-mock-up.png" alt="">
+                       </div>
+                      </div>
+                </div>
+            </div>
+            
+            <div></div>
+           </section>
+
 
     </main>
     <footer>
